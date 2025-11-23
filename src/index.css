@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme{
+    --breakpoint-mob: 480px;   
+    --breakpoint-tab-min: 768px;
+    --breakpoint-tab: 992px;
+    --breakpoint-lap: 1367px;
+    --spacing-sp1:40px;
+    --spacing-sp2:20px;
+    --spacing-sp3: calc(100vh - 100px);
+    --color-praim1:#A6A6A6;
+    --color-praim2:#c4c4c4;
+
+}
+
+
+.test{
+    color: #c4c4c4;
+}
