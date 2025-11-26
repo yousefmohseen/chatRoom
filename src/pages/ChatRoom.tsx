@@ -19,6 +19,7 @@ export default function ChatRoom() {
   const [text, setText] = useState("");
   const [showPicker, setShowPicker] = useState(false);
   const [showPopUpLeave, setShowPopUpLeave] = useState(false);
+  const [showSidNav, setshowSidNav] = useState(false);
 
   const navigate = useNavigate();
 
@@ -229,13 +230,13 @@ export default function ChatRoom() {
 
   return (
     <div>
-      <div className="flex">
-        <h2 className="font-semibold text-4xl mb-10 p-2 pl-4">Chat Room</h2>
+      <div className="flex justify-between items-center">
+        <h2 className="font-semibold text-4xl mb-10 p-2 pl-4 max-mob:mb-5 max-mob:text-2xl">Chat Room</h2>
         {(statuses.length > 0 || otherSystemMessages.length > 0) && (
           <div className="p-1.5">
             <div className="bg-slate-700 text-white p-2 rounded-[7px] mb-2">
-              <strong className="block mb-1">Status List User</strong>
-              <div className="flex flex-wrap gap-2 overflow-y-scroll *:h-7">
+              <strong className="block mb-1 max-mob:text-[15px]">Status List User</strong>
+              <div className="flex flex-wrap gap-2 overflow-y-scroll max-tab-min:h-7 max-tab-min:flex-nowrap max-tab-min:flex-col">
                 {statuses.map((s) => (
                   <span key={s.id} className="px-2 py-1 bg-slate-600 rounded text-sm">
                     {s.text}
@@ -246,11 +247,18 @@ export default function ChatRoom() {
             </div>
           </div>
         )}
-
+        <div className="hidden m-4 max-mob:block" onClick={() => setshowSidNav(!showSidNav)}>
+          <span className={!showSidNav ? "block" :"hidden"}>
+            <i className="fa-solid fa-bars"></i>
+          </span>
+          <span className={showSidNav ? "block" :"hidden"}>
+            <i className="fa-solid fa-close"></i>
+          </span>
+        </div>
       </div>
-  
+
       <div className="w-full h-sp3 flex">
-        <div className="w-[33%] p-sp2 text-white text-center flex flex-col justify-between">
+        <div className={(showSidNav ? "max-mob:flex":"max-mob:hidden")+" w-[33%] p-sp2 text-white text-center flex flex-col justify-between max-tab-min:p-5 max-mob:p-2.5 max-mob:absolute max-mob:gap-3.5"}>
           <div >
             <h4 className=" bg-slate-600 relative border-b-2 border-slate-800 rounded-t-[7px]">
               <strong className="text-2xl">Online</strong>
@@ -271,13 +279,13 @@ export default function ChatRoom() {
             </div>
           </div>
         </div>
-        
+
         <div className="relative w-full">
 
-          <div ref={containerRef} className="h-full pb-12 p-sp1 overflow-y-scroll">
+          <div ref={containerRef} className="h-full pb-12 p-sp1 overflow-y-scroll max-tab-min:p-5">
             <MessageList messages={nonSystemMessages} />
           </div>
-          <div className="w-[93%] absolute bottom-0 left-sp1">
+          <div className="w-[93%] absolute bottom-0 left-sp1 max-tab-min:left-5">
             <div className="w-full h-12 flex backdrop-blur-sm rounded-[7px]">
               <input
                 className="w-full p-2 outline-none border-2 border-praim2 focus:border-praim1 rounded-l-[7px]"
