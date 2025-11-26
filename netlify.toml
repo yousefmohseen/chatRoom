@@ -12,4 +12,4 @@
   status = 200
 
 [context.production.environment]
-  VITE_API_URL = "https://your-backend.onrender.com"
+  VITE_API_URL = "https://chatroom-backend-production-6898.up.railway.app"
