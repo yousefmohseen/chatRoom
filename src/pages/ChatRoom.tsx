@@ -258,7 +258,7 @@ export default function ChatRoom() {
       </div>
 
       <div className="w-full h-sp3 flex">
-        <div className={(showSidNav ? "max-mob:flex":"max-mob:hidden")+" w-[33%] p-sp2 text-white text-center flex flex-col justify-between max-tab-min:p-5 max-mob:p-2.5 max-mob:absolute max-mob:z-50 max-mob:gap-3.5 max-mob:bg-white"}>
+        <div className={(showSidNav ? "max-mob:flex":"max-mob:hidden")+" w-[33%] p-sp2 text-white text-center flex flex-col justify-between max-tab-min:p-5 max-mob:p-2.5 max-mob:absolute max-mob:z-50 max-mob:gap-3.5 max-mob:bg-white max-mob:h-sp3"}>
           <div >
             <h4 className=" bg-slate-600 relative border-b-2 border-slate-800 rounded-t-[7px]">
               <strong className="text-2xl">Online</strong>
@@ -266,7 +266,7 @@ export default function ChatRoom() {
             </h4>
             <OnlineList users={online} />
           </div>
-          <button className="p-2.5 bg-red-800  rounded-[7px] cursor-pointer" onClick={() => leave(true)}>Leave Chat</button>
+          <button className="p-2.5 bg-red-800  rounded-[7px] cursor-pointer max-mob:mb-10" onClick={() => leave(true)}>Leave Chat</button>
           <div className={(showPopUpLeave == true ? "block" : "hidden") + " absolute left-0 top-0 z-2 w-full h-full p-2.5"}>
             <div className="w-[75%] h-[50%] bg-amber-50 border-2 border-amber-100 rounded-[7px] absolute top-[50%] left-[50%] translate-[-50%] z-3">
               <span className="p-3 text-red-700 font-medium border-l-2 border-b-2 border-amber-100 cursor-pointer absolute right-0 top-0 z-4" onClick={() => leave(false)}>
@@ -285,7 +285,7 @@ export default function ChatRoom() {
           <div ref={containerRef} className="h-full pb-12 p-sp1 overflow-y-scroll max-tab-min:p-5">
             <MessageList messages={nonSystemMessages} />
           </div>
-          <div className="w-[93%] absolute bottom-0 left-sp1 max-tab-min:left-5">
+          <div className="w-[93%] absolute bottom-0 left-sp1 max-tab-min:left-5 max-mob:bottom-10">
             <div className="w-full h-12 flex backdrop-blur-sm rounded-[7px]">
               <input
                 className="w-full p-2 outline-none border-2 border-praim2 focus:border-praim1 rounded-l-[7px]"
