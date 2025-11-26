@@ -258,7 +258,7 @@ export default function ChatRoom() {
       </div>
 
       <div className="w-full h-sp3 flex">
-        <div className={(showSidNav ? "max-mob:flex":"max-mob:hidden")+" w-[33%] p-sp2 text-white text-center flex flex-col justify-between max-tab-min:p-5 max-mob:p-2.5 max-mob:absolute max-mob:gap-3.5"}>
+        <div className={(showSidNav ? "max-mob:flex":"max-mob:hidden")+" w-[33%] p-sp2 text-white text-center flex flex-col justify-between max-tab-min:p-5 max-mob:p-2.5 max-mob:absolute max-mob:z-50 max-mob:gap-3.5 max-mob:bg-white"}>
           <div >
             <h4 className=" bg-slate-600 relative border-b-2 border-slate-800 rounded-t-[7px]">
               <strong className="text-2xl">Online</strong>
@@ -280,7 +280,7 @@ export default function ChatRoom() {
           </div>
         </div>
 
-        <div className="relative w-full">
+        <div className="relative w-full h-sp3">
 
           <div ref={containerRef} className="h-full pb-12 p-sp1 overflow-y-scroll max-tab-min:p-5">
             <MessageList messages={nonSystemMessages} />
